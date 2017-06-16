@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 //其实这道题与ClimbingStairs_70相似
 //就是说 一个人它可以跨1-6级台阶 那么如果它一共跨了n步 请问它跨的台阶总数为s一共有多少种方法 
 //其实 c[s]=c[s-1]+c[s-2]+c[s-3]+c[s-4]+c[s-5]+c[s-6]
@@ -21,8 +22,9 @@ public class dice_43 {
 					p[s] += s - j < 0 ? 0 : p[s - j];
 			}
 		 }
-		
 		System.out.println(Arrays.toString(p));
+		 HashMap<Integer,Integer> freq=new HashMap<>();
+		 freq.entrySet();
 	}
     public int Sum_Solution(int n) {
         int sum=n;
