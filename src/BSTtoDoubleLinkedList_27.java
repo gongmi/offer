@@ -43,12 +43,14 @@ public class BSTtoDoubleLinkedList_27 {
 	public TreeNode Convert3(TreeNode root) {
 		if (root == null)
 			return null;
-		TreeNode left = Convert3(root.left); // 左
+		TreeNode left = Convert3(root.left); // 左  这个left其实只用来返回  但是它必须先操作  所以 用left存起来 return的时候好用 
+		
 		root.left = prev;
 		if (prev != null)
 			prev.right = root; // 把当前节点与prev连起来
 		prev = root; // 中
 		Convert3(root.right); // 右
+		
 		return root.left == null ? root : left;
 	}
 }
